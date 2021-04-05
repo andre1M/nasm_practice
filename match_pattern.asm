@@ -8,7 +8,12 @@
 ;   and the pattern address is passed through the stack at EBP+12.
 ; Value of 0 indicates the end of string/pattern.
 ; One local variable I is used (4 bytes).
-; The result is passed through the EAX (true or false).
+; The result is passed through the EAX (true -- 1 or false -- 0).
+; Call example:
+;   push dword pattern
+;   push dword string
+;   call match
+;   add esp, 8
 
 
 match:                          ; organise stack frame
